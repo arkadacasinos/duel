@@ -6,6 +6,7 @@ import { FloatingDock } from "@/components/floating-dock"
 import { SeoKeywords } from "@/components/seo-keywords"
 import { AppSchema } from "@/components/app-schema"
 import { VpnNotice } from "@/components/vpn-notice"
+import { Analytics } from "@vercel/analytics/next"
 import { SITE_URL, SITE_NAME, SITE_BRAND, SITE_DESCRIPTION } from "@/lib/site"
 
 const TITLE = `${SITE_BRAND} — The First Casino That Gives a Fuck`
