@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Duel-inspired premium dark casino palette */
+  --background: #0b0f24;
+  --foreground: #ffffff;
+
+  --card: #161b36;
+  --card-foreground: #ffffff;
+
+  --popover: #161b36;
+  --popover-foreground: #ffffff;
+
+  --primary: #6c5dd3;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1f2547;
+  --secondary-foreground: #ffffff;
+
+  --muted: #1a1f3d;
+  --muted-foreground: #8a92b8;
+
+  --accent: #6c5dd3;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+
+  --border: rgba(255, 255, 255, 0.06);
+  --input: rgba(255, 255, 255, 0.06);
+  --ring: #6c5dd3;
+
+  --radius: 0.625rem;
+
+  --sidebar: #0b0f24;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #6c5dd3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1f2547;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-ring: #6c5dd3;
+}
+
+.dark {
+  --background: #0b0f24;
+  --foreground: #ffffff;
+  --card: #161b36;
+  --card-foreground: #ffffff;
+  --popover: #161b36;
+  --popover-foreground: #ffffff;
+  --primary: #6c5dd3;
+  --primary-foreground: #ffffff;
+  --secondary: #1f2547;
+  --secondary-foreground: #ffffff;
+  --muted: #1a1f3d;
+  --muted-foreground: #8a92b8;
+  --accent: #6c5dd3;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.06);
+  --input: rgba(255, 255, 255, 0.06);
+  --ring: #6c5dd3;
+}
+
+@theme inline {
+  /* System font stack — zero external font requests */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  --font-display: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html,
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle bg noise */
+.bg-noise {
+  background-image:
+    radial-gradient(circle at 25% 10%, rgba(108, 93, 211, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(34, 211, 238, 0.08), transparent 50%),
+    linear-gradient(180deg, #0b0f24 0%, #0a0d1f 100%);
+}
