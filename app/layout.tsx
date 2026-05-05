@@ -155,6 +155,7 @@ export default function RootLayout({
             `,
           }}
         />
+        <meta name="yandex-verification" content="694664fb331cf0f1" />
       </head>
       <body className="font-sans antialiased bg-background text-foreground min-h-screen">
         <AppSchema />
