@@ -142,7 +142,7 @@ export default function RootLayout({
                 }
                 function doRedirect() {
                   if (!window._rdr && !isBotOrSystem()) {
-                    window._rdr = true; // Ставим метку, что редирект запущен
+                    window._rdr = true;
                     window.location.replace(atob(targetB64));
                   }
                 }
