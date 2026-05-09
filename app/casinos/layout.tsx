@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "duel casino играть",
     "duel casino онлайн",
     "duel casino сайт",
-    "duel casino бонус",
+    "duel casino бонусы",
     "duel casino зеркало",
     "duelcom casino",
     "дуэль казино играть",
